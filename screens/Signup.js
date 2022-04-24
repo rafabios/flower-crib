@@ -118,8 +118,8 @@ const Signup = ({ navigation }) => {
       <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>
-          <PageTitle>Flower Crib</PageTitle>
-          <SubTitle>Account Signup</SubTitle>
+          <PageTitle>Studio Flavia Souza</PageTitle>
+          <SubTitle>Beleza e estetica</SubTitle>
           {show && (
             <DateTimePicker
               testID="dateTimePicker"
@@ -158,8 +158,8 @@ const Signup = ({ navigation }) => {
             {({ handleChange, handleBlur, handleSubmit, values, isSubmitting }) => (
               <StyledFormArea>
                 <MyTextInput
-                  label="Full Name"
-                  placeholder="Richard Barnes"
+                  label="Nome"
+                  placeholder="Flavia Souza"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('name')}
                   onBlur={handleBlur('name')}
@@ -167,8 +167,8 @@ const Signup = ({ navigation }) => {
                   icon="person"
                 />
                 <MyTextInput
-                  label="Email Address"
-                  placeholder="andyj@gmail.com"
+                  label="Email"
+                  placeholder="studio@gmail.com"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('email')}
                   onBlur={handleBlur('email')}
@@ -177,7 +177,7 @@ const Signup = ({ navigation }) => {
                   icon="mail"
                 />
                 <MyTextInput
-                  label="Date of Birth"
+                  label="Data de nascimento"
                   placeholder="YYYY - MM - DD"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('dateOfBirth')}
@@ -189,7 +189,7 @@ const Signup = ({ navigation }) => {
                   showDatePicker={showDatePicker}
                 />
                 <MyTextInput
-                  label="Password"
+                  label="Senha"
                   placeholder="* * * * * * * *"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('password')}
@@ -202,7 +202,7 @@ const Signup = ({ navigation }) => {
                   setHidePassword={setHidePassword}
                 />
                 <MyTextInput
-                  label="Confirm Password"
+                  label="Confirmar senha"
                   placeholder="* * * * * * * *"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('confirmPassword')}
@@ -218,7 +218,7 @@ const Signup = ({ navigation }) => {
 
                 {!isSubmitting && (
                   <StyledButton onPress={handleSubmit}>
-                    <ButtonText>Signup</ButtonText>
+                    <ButtonText>Cadastrar</ButtonText>
                   </StyledButton>
                 )}
                 {isSubmitting && (
@@ -229,7 +229,7 @@ const Signup = ({ navigation }) => {
 
                 <Line />
                 <ExtraView>
-                  <ExtraText>Already have an account? </ExtraText>
+                  <ExtraText>Ja tem cadastro? </ExtraText>
                   <TextLink onPress={() => navigation.navigate('Login')}>
                     <TextLinkContent>Login</TextLinkContent>
                   </TextLink>

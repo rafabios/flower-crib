@@ -119,7 +119,7 @@ const Login = ({ navigation }) => {
         setStoredCredentials(credentials);
       })
       .catch((error) => {
-        handleMessage('Persisting login failed');
+        handleMessage('Falha no login');
         console.log(error);
       });
   };
@@ -130,14 +130,14 @@ const Login = ({ navigation }) => {
         <StatusBar style="dark" />
         <InnerContainer>
           <PageLogo resizeMode="cover" source={require('./../assets/img/expo-bg1.png')} />
-          <PageTitle>Flower Crib</PageTitle>
-          <SubTitle>Account Login</SubTitle>
+          <PageTitle>Studio Flavia Souza</PageTitle>
+          <SubTitle>Beleza e estetica</SubTitle>
 
           <Formik
             initialValues={{ email: '', password: '' }}
             onSubmit={(values, { setSubmitting }) => {
               if (values.email == '' || values.password == '') {
-                handleMessage('Please fill in all fields');
+                handleMessage('Preencha os campos para o login');
                 setSubmitting(false);
               } else {
                 handleLogin(values, setSubmitting);
@@ -147,8 +147,8 @@ const Login = ({ navigation }) => {
             {({ handleChange, handleBlur, handleSubmit, values, isSubmitting }) => (
               <StyledFormArea>
                 <MyTextInput
-                  label="Email Address"
-                  placeholder="andyj@gmail.com"
+                  label="Email"
+                  placeholder="studio@gmail.com"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('email')}
                   onBlur={handleBlur('email')}
@@ -157,7 +157,7 @@ const Login = ({ navigation }) => {
                   icon="mail"
                 />
                 <MyTextInput
-                  label="Password"
+                  label="Senha"
                   placeholder="* * * * * * * *"
                   placeholderTextColor={darkLight}
                   onChangeText={handleChange('password')}
@@ -181,13 +181,17 @@ const Login = ({ navigation }) => {
                     <ActivityIndicator size="large" color={primary} />
                   </StyledButton>
                 )}
-
+                  <ExtraView>
+                  <TextLink onPress={() => navigation.navigate('Signup')}>
+                    <TextLinkContent>Esqueci a senha</TextLinkContent>
+                  </TextLink>
+                </ExtraView>
                 <Line />
 
                 {!googleSubmitting && (
                   <StyledButton onPress={handleGoogleSignin} google={true}>
                     <Fontisto name="google" size={25} color={primary} />
-                    <ButtonText google={true}>Sign in with Google</ButtonText>
+                    <ButtonText google={true}>Entrar com Google</ButtonText>
                   </StyledButton>
                 )}
                 {googleSubmitting && (
@@ -197,11 +201,12 @@ const Login = ({ navigation }) => {
                 )}
 
                 <ExtraView>
-                  <ExtraText>Don't have an account already? </ExtraText>
+                  <ExtraText>Ainda náo tem cadastro ? </ExtraText>
                   <TextLink onPress={() => navigation.navigate('Signup')}>
-                    <TextLinkContent>Signup</TextLinkContent>
+                    <TextLinkContent>Cadastrar</TextLinkContent>
                   </TextLink>
                 </ExtraView>
+                
               </StyledFormArea>
             )}
           </Formik>

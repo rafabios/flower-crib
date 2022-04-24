@@ -47,7 +47,7 @@ const Welcome = () => {
         <WelcomeImage resizeMode="cover" source={require('./../assets/img/expo-bg2.png')} />
 
         <WelcomeContainer>
-          <PageTitle welcome={true}>Welcome! Buddy</PageTitle>
+          <PageTitle welcome={true}>Bem vinda!</PageTitle>
           <SubTitle welcome={true}>{name || 'Olga Simpson'}</SubTitle>
           <SubTitle welcome={true}>{email || 'olgasimp@gmail.com'}</SubTitle>
 
